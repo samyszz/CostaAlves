@@ -1,0 +1,92 @@
+/* Importações de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+
+/* Reset básico e estilo padrão */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f6f4;
+    color: #4a3f3f;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Títulos com fonte serifada elegante */
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Cores principais */
+:root {
+    --bg-principal: #f9f6f4;
+    --destaque: #8e7673;
+    --texto-escuro: #4a3f3f;
+    --branco: #ffffff;
+}
+
+/* Logo */
+#logo-img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Escala da justiça */
+#justice-scale-img {
+    width: 224px;
+    height: 224px;
+}
+
+/* Imagens da seção "Sobre nós" */
+#woman-selfie-img,
+#woman-smiling-img {
+    width: 160px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+
+/* Cartões de serviços */
+.service-card {
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--branco); /* White background for cards */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Botão principal */
+button {
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e6e0dd;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: var(--destaque);
+    color: var(--bg-principal);
+    padding: 3rem 1.5rem;
+}
+
+footer h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+footer address {
+    font-style: normal;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Costa Alves Advocacia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* CSS Adicional para o Modal */
+    .modal {
+        display: none; /* Oculto por padrão */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
+    }
+
+    .modal-content {
+        background-color: #f9f6f4;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #8e7673;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+  </style>
+</head>
+
+<body class="bg-[#f9f6f4] text-[#4a3f3f]">
+  <header class="bg-[#947c7c] text-[#f9f6f4]">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="Captura de tela 2025-04-25 233023.png" id="logo-img" alt="Logo Costa Alves" class="h-48 md:h-56 lg:h-64 object-contain" />
+        </div>
+        <!-- Menu -->
+        <nav class="flex gap-6 font-semibold text-sm">
+            <a class="hover:underline" href="#sobre-nos">Sobre nós</a>
+            <a class="hover:underline" href="#servicos">Serviços</a>
+            <a class="hover:underline" href="#artigos">Artigos</a>
+            <a class="hover:underline" href="#contato">Contato</a>
+        </nav>
+    </div>
+    <!-- Chamada do Header -->
+    <div class="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row md:items-center md:justify-between">
+        <div class="md:w-1/2 text-center md:text-left">
+            <h1 class="font-playfair text-3xl md:text-4xl font-semibold leading-relaxed max-w-md">
+                Com empatia e profissionalismo, seu caso sempre estará em boas mãos
+            </h1>
+            <a href="https://wa.me/5511980817415" target="_blank">
+                <button class="mt-6 bg-[#f9f6f4] text-[#8e7673] font-semibold px-6 py-2 hover:bg-[#e6e0dd]">
+                    Contate-nos
+                </button>
+            </a>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+            <img src="Captura de tela 2025-04-26 001659.png" id="justice-scale-img" alt="Balança da Justiça" class="max-w-md md:max-w-md" />
+        </div>
+    </div>
+</header>
+
+<!-- Sobre Nós -->
+<section id="sobre-nos" class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+    <div class="selfie-image mx-auto md:mx-0">
+        <img src="Captura de tela 2025-04-26 001542.png" alt="Selfie" class="shadow-md max-w-[200px] md:max-w-xs" />
+ </div>
+    <div class="md:w-1/2 text-[#8e7673]">
+        <h2 class="font-playfair text-2xl font-semibold mb-4 text-[#4a3f3f]">Sobre Nós</h2>
+        <p class="text-lg leading-relaxed">
+            Somos duas sócias com objetivos e ideais em comum, unidas pelo compromisso de oferecer serviços jurídicos de excelência, com foco no atendimento personalizado e na busca pela melhor solução para nossos clientes.
+        </p>
+    </div>
+</section>
+
+<!-- Serviços -->
+<section id="servicos" class="max-w-7xl mx-auto px-6 pb-12">
+  <h3 class="text-center font-playfair text-xl font-semibold mb-8 text-[#4a3f3f]">Nossos Serviços</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-[#f9f6f4] border border-[#8e7673] rounded-lg shadow-md p-6 hover:shadow-lg transition transform hover:scale-105 duration-300">
+          <div class="flex items-center gap-4">
+              <i class="fas fa-gavel text-2xl text-[#8e7673] hover:text-black"></i>
+              <h4 class="font-playfair text-lg font-semibold mb-4 text-[#4a3f3f]">Direito de Família</h4>
+          </div>
+          <p class="text-[#4a3f3f]">Consultoria e atuação em casos de divórcio, guarda, pensão alimentícia e adoção.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-[#f9f6f4] border border-[#8e7673] rounded-lg shadow-md p-6 hover:shadow-lg transition transform hover:scale-105 duration-300">
+          <div class="flex items-center gap-4">
+              <i class="fas fa-briefcase text-2xl text-[#8e7673] hover:text-black"></i>
+              <h4 class="font-playfair text-lg font-semibold mb-4 text-[#4a3f3f]">Direito Trabalhista</h4>
+          </div>
+          <p class="text-[#4a3f3f]">Defesa dos direitos dos trabalhadores e empregadores em ações judiciais e consultorias.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-[#f9f6f4] border border-[#8e7673] rounded-lg shadow-md p-6 hover:shadow-lg transition transform hover:scale-105 duration-300">
+          <div class="flex items-center gap-4">
+              <i class="fas fa-balance-scale text-2xl text-[#8e7673] hover:text-black"></i>
+              <h4 class="font-playfair text-lg font-semibold mb-4 text-[#4a3f3f]">Direito Civil</h4>
+          </div>
+          <p class="text-[#4a3f3f]">Atuação em processos de indenizações, responsabilidade civil e contratos.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-[#f9f6f4] border border-[#8e7673] rounded-lg shadow-md p-6 hover:shadow-lg transition transform hover:scale-105 duration-300">
+          <div class="flex items-center gap-4">
+              <i class="fas fa-money-bill-wave text-2xl text-[#8e7673] hover:text-black"></i>
+              <h4 class="font-playfair text-lg font-semibold mb-4 text-[#4a3f3f]">Direito Previdenciário</h4>
+          </div>
+          <p class="text-[#4a3f3f]">Aposentadorias, benefícios do INSS, revisões e planejamento previdenciário.</p>
+      </div>
+  </div>
+</section>
+
+<!-- Artigos -->
+<section id="artigos" class="max-w-7xl mx-auto px-6 pb-12">
+  <h3 class="text-center font-playfair text-xl font-semibold mb-8 text-[#4a3f3f]">Artigos</h3>
+  
+  <div class="relative">
+      <div id="carousel" class="flex overflow-x-auto no-scrollbar space-x-6 py-4 transition-all duration-300">
+          <a href="https://www.jusbrasil.com.br/artigos/busca-e-apreensao-pode-acontecer-em-blitz-policial/3500554842" class="carousel-item min-w-[250px] bg-[#f9f6f4] border border-[#8e7673] rounded-lg shadow-md hover:shadow-lg transition">
+              <img src="capa_artigo.png" alt ="Artigo 1" class="rounded-t-lg">
+              <div class="p-4">
+                  <h4 class="font-playfair font-semibold text-[#4a3f3f] mb-2">Título do Artigo 1</h4>
+                  <p class="text-sm text-[#4a3f3f]">Uma breve descrição sobre o tema do artigo apresentado aqui.</p>
+              </div>
+          </a>
+
+          <a href="https://www.jusbrasil.com.br/artigos/crimes-digitais-o-que-sao-quais-as-leis-aplicaveis-e-como-agir-se-voce-for-vitima-ou-acusado/3516900163" class="carousel-item min-w-[250px] bg-[#f9f6f4] border border-[#8e7673] rounded-lg shadow-md hover:shadow-lg transition">
+              <img src="capa_artigo.png" alt="Artigo 2" class="rounded-t-lg">
+              <div class="p-4">
+                  <h4 class="font-playfair font-semibold text-[#4a3f3f] mb-2">Título do Artigo 2</h4>
+                  <p class="text-sm text-[#4a3f3f]">Informações valiosas sobre direitos e responsabilidades.</p>
+              </div>
+          </a>
+
+          <a href="https://www.jusbrasil.com.br/artigos/judicializacao-do-sus-entre-o-direito-fundamental-e-os-limites-da-politica-publica/3500284244" class="carousel-item min-w-[250px] bg-[#f9f6f4] border border-[#8e7673] rounded-lg shadow-md hover:shadow-lg transition">
+              <img src="capa_artigo.png" alt="Artigo 3" class="rounded-t-lg">
+              <div class="p-4">
+                  <h4 class="font-playfair font-semibold text-[#4a3f3f] mb-2">Título do Artigo 3</h4>
+                  <p class="text-sm text-[#4a3f3f]">Uma breve descrição sobre o tema do artigo apresentado aqui.</p>
+              </div>
+          </a>
+
+          <a href="https://www.jusbrasil.com.br/artigos/aposentadoria-da-pessoa-com-deficiencia-entenda-quem-tem-direito-e-como-funciona/3501679290" class="carousel-item min-w-[250px] bg-[#f9f6f4] border border-[#8e7673] rounded-lg shadow-md hover:shadow-lg transition">
+              <img src="capa_artigo.png" alt="Artigo 4" class="rounded-t-lg">
+              <div class="p-4">
+                  <h4 class="font-playfair font-semibold text-[#4a3f3f] mb-2">Título do Artigo 4</h4>
+                  <p class="text-sm text-[#4a3f3f]">Uma breve descrição sobre o tema do artigo apresentado aqui.</p>
+              </div>
+          </a>
+
+          <a href="https://www.jusbrasil.com.br/artigos/seus-direitos-bancarios-conheca-e-proteja-se/3501302033" class="carousel-item min-w-[250px] bg-[#f9f6f4] border border-[#8e7673] rounded-lg shadow-md hover:shadow-lg transition">
+              <img src="capa_artigo.png" alt="Artigo 5" class="rounded-t-lg">
+              <div class="p-4">
+                  <h4 class="font-playfair font-semibold text-[#4a3f3f] mb-2">Título do Artigo 5</h4>
+                  <p class="text-sm text-[#4a3f3f]">Uma breve descrição sobre o tema do artigo apresentado aqui.</p>
+              </div>
+          </a>
+      </div>
+
+      <!-- Botões de Navegação -->
+      <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#8e7673] text-white rounded-full p-2">
+          <i class="fas fa-chevron-left"></i>
+      </button>
+      <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#8e7673] text-white rounded-full p-2">
+          <i class="fas fa-chevron-right"></i>
+      </button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contato" class="bg-[#8e7673] text-[#f9f6f4] text-center py-12 px-6">
+  <h4 class="font-playfair text-xl font-semibold mb-6">Vamos trabalhar juntos!</h4>
+  <div class="flex justify-center gap-8 text-3xl mt-8">
+      <!-- Redes sociais -->
+      <a href="https://wa.me/5511962860588" target="_blank" class="text-[#f9f6f4] hover:text-[#8e7673]">
+          <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:marinalves1983@gmail.com" class="text-[#f9f6f4] hover:text-[#8e7673]">
+          <i class="fas fa-envelope"> </i> <!-- Ícone de e-mail -->
+      </a>
+      <a href="https://www.instagram.com/costaalves.adv" target="_blank" class="text-[#f9f6f4] hover:text-[#8e7673]">
+          <i class="fab fa-instagram"></i>
+      </a>
+  </div>
+  <p class="mt-6 text-sm">© 2025 Costa Alves Advocacia - Todos os direitos reservados</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    // JavaScript para o Carrossel
+    const carousel = document.getElementById('carousel');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let scrollAmount = 0;
+
+    nextButton.addEventListener('click', () => {
+        scrollAmount += 250; // Ajuste a quantidade de scroll
+        carousel.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    prevButton.addEventListener('click', () => {
+        scrollAmount -= 250; // Ajuste a quantidade de scroll
+        if (scrollAmount < 0) scrollAmount = 0; // Impede o scroll negativo
+        carousel.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+</script>
+</body>
+</html>
