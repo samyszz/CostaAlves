@@ -1,135 +1,391 @@
+/* 1. VARIÁVEIS E RESET GLOBAL (COM A PALETA DE CORES ORIGINAL) */
+:root {
+    --cor-primaria: #8e7673;      /* Marrom acinzentado */
+    --cor-secundaria: #947c7c;   /* Tom mais claro para header/footer */
+    --cor-fundo: #f9f6f4;         /* Bege claro de fundo */
+    --cor-texto: #4a3f3f;         /* Texto principal */
+    --cor-branca: #ffffff;
+    --fonte-serif: 'Playfair Display', serif;
+    --fonte-sans: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--fonte-sans);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.7;
 }
 
-#logo-img {
-    width: 70%;
-    height: auto;
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-#justice-scale-img {
+/* 2. HEADER E NAVEGAÇÃO */
+.header {
+    background-color: var(--cor-secundaria);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+}
+
+.logo img {
+    height: 65px; /* Ajuste a altura da sua logo aqui */
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--cor-branca);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--cor-fundo);
+    transition: all 0.3s ease-in-out;
+}
+
+/* 3. SEÇÃO HERO */
+.hero {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo);
+    padding: 40px 0 60px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text { flex: 1; }
+
+.hero-title {
+    font-family: var(--fonte-serif);
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    color: var(--cor-branca);
+    line-height: 1.3;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--cor-fundo);
+    color: var(--cor-primaria);
+    padding: 12px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-branca);
+    transform: translateY(-3px);
+}
+
+.hero-image img {
+    max-width: 320px;
     height: auto;
 }
 
-#servicos .card {
-    background-color: #f9f6f4;
-    border: 1px solid #8e7673;
-    border-radius: 10px;
-    padding: 20px;
+/* 4. SEÇÕES PADRÃO */
+.section-title {
+    font-family: var(--fonte-serif);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-section, .articles-section {
+    padding: 80px 0;
+}
+
+/* 5. SEÇÃO SOBRE NÓS */
+.about-section.container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-images {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.about-img {
+    width: 220px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-text .section-title {
+    text-align: left;
+}
+
+/* 6. SEÇÃO DE SERVIÇOS (COM LAYOUT 2x2 EM DESKTOP) */
+.services-section {
+    padding: 80px 0;
+    background-color: #f0ebe8; /* Um tom ligeiramente diferente para contraste */
+}
+
+.services-grid {
+    display: grid;
+    gap: 30px;
+    /* Em telas pequenas, uma coluna */
+    grid-template-columns: 1fr;
+}
+
+.service-card {
+    background: var(--cor-branca);
+    padding: 30px;
+    border: 1px solid #e6e0dd;
+    border-radius: 8px;
+    text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#servicos .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-#carousel img {
-    border-radius: 10px;
+.service-card i {
+    font-size: 3rem;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
 }
 
-#carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 16px;
+.service-card h3 {
+    font-family: var(--fonte-serif);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-#prev, #next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #8e7673;
-    color: white;
-    border-radius: 50%;
-    padding: 10px;
+/* 7. SEÇÃO DE ARTIGOS */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-#prev:hover, #next:hover {
-    background-color: #7a6664;
-}
-
-.no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
-}
-
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-/* Ícones de contato */
-footer a:hover {
-    color: black; /* Cor do hover para preto */
-}
-
-/* Ajuste nos ícones para garantir que eles apareçam corretamente */
-footer .fab {
-    font-size: 2.5rem; /* Tamanho adequado para os ícones */
-    transition: color 0.3s ease; /* Transição suave para a cor */
-}
-
-/* Estilização dos links nos cards do carrossel */
-.carousel-item {
-    text-decoration: none; /* Remove o sublinhado dos links */
-    color: inherit; /* Herda a cor do texto do card */
-}
-
-.carousel-item:hover {
-    transform: scale(1.02); /* Leve aumento no hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
-}
-
-/* Botão "voltar ao topo" */
-#top-button {
-    display: none; /* Inicialmente oculto */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #8e7673;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-}
-
-#top-button:hover {
-    background-color: #7a6664; /* Cor do hover */
-}
-.modal {
-    display: none; /* Oculto por padrão */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
-}
-
-.modal-content {
-    background-color: #f9f6f4;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #8e7673;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
+.article-card {
+    background: var(--cor-branca);
+    border-radius: 8px;
+    overflow: hidden;
     text-decoration: none;
-    cursor: pointer;
+    color: var(--cor-texto);
+    border: 1px solid #e6e0dd;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.article-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article-card-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.article-card h3 {
+    font-family: var(--fonte-serif);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* 8. FOOTER */
+.footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.footer h3 {
+    font-family: var(--fonte-serif);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    margin: 30px 0;
+}
+
+.social-icons a {
+    color: var(--cor-fundo);
+    font-size: 1.8rem;
+    margin: 0 15px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--cor-branca);
+    transform: scale(1.1);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ============================== */
+/*        MEDIA QUERIES           */
+/* ============================== */
+
+/* Telas pequenas: até 767px (Celulares) */
+@media (max-width: 767px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 85px;
+        flex-direction: column;
+        background-color: #5c4d4d;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 20px;
+        width: 100%;
+        border-bottom: 1px solid #756363;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about-section.container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-images {
+        justify-content: center;
+    }
+
+    .about-text .section-title {
+        text-align: center;
+    }
+}
+
+/* Telas médias: 768px a 991px (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-section.container {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .about-images {
+        justify-content: center;
+    }
+
+    .about-text .section-title {
+        text-align: center;
+    }
+}
+
+/* Telas grandes: acima de 992px (Desktops) */
+@media (min-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .about-section.container {
+        flex-direction: row;
+        text-align: left;
+        gap: 60px;
+    }
+
+    .about-images {
+        justify-content: flex-start;
+    }
+
+    .about-text .section-title {
+        text-align: left;
+    }
 }
